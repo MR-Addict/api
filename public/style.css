@@ -1,0 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+a {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  color: black;
+}
+
+a:hover {
+  color: blue;
+  transition: 300ms;
+}
