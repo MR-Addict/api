@@ -1,12 +1,24 @@
 import puppeteer from "puppeteer-core";
-
 import chromium from "chrome-aws-lambda";
 
-export default async function takeScreenshot(url, options) {
+import { VercelRequest, VercelResponse } from "@vercel/node";
+
+export default async function takeScreenshot(
+  url: string,
+  options: {
+    type: "png" | "jpeg";
+    width: number;
+    height: number;
+    timeout: number;
+    delay: number;
+    fullPage: boolean;
+    disableAnimations: boolean;
+  }
+) {
   const chromePath =
-    process.env.VERCEL === "1"
-      ? await chromium.executablePath
-      : "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
+    process.env.ISLOCALHOST === "TRUE"
+      ? "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+      : await chromium.executablePath;
 
   const browser = await puppeteer.launch({
     headless: true,
@@ -41,7 +53,7 @@ export default async function takeScreenshot(url, options) {
   return base64;
 }
 
-module.exports = async (req, res) => {
+module.exports = async (req: VercelRequest, res: VercelResponse) => {
   const start = Date.now();
   if (req.method !== "POST") return res.setHeader("Allow", ["POST"]).end(`Method ${req.method} is not allowed!`);
 
