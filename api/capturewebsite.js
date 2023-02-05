@@ -4,7 +4,7 @@ import chromium from "chrome-aws-lambda";
 
 export default async function takeScreenshot(url, options) {
   const chromePath =
-    process.env.VERCEL === "0"
+    process.env.VERCEL === "1"
       ? await chromium.executablePath
       : "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
 
