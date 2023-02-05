@@ -4,7 +4,7 @@ import chromium from "chrome-aws-lambda";
 
 export default async function takeScreenshot(url, options) {
   const chromePath =
-    process.env.VERCEL === "1"
+    process.env.VERCEL === "0"
       ? await chromium.executablePath
       : "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
 
@@ -72,6 +72,8 @@ module.exports = async (req, res) => {
 
     if (base64 === undefined) return res.json({ status: false, message: `Website ${req.body.url} unaccessible!` });
 
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Request-Method", "*");
     return res.json({
       status: true,
       data: { base64, url: req.body.url, type: req.body.type, runtime: (end - start) / 1000 },
