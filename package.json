@@ -9,7 +9,8 @@
   "author": "MR-Addict",
   "license": "MIT",
   "dependencies": {
-    "chrome-aws-lambda": "^8.0.2"
+    "chrome-aws-lambda": "^8.0.2",
+    "joi": "^17.7.0"
   },
   "devDependencies": {
     "@vercel/node": "^2.9.0",
