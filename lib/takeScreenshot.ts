@@ -27,10 +27,9 @@ export default async function takeScreenshot(url: string, options: optionsType) 
   const page = await browser.newPage();
 
   page.setDefaultTimeout(options.timeout * 1000);
+  await page.setViewport({ width: options.width, height: options.height });
   await page.setBypassCSP(true);
   await page.setJavaScriptEnabled(true);
-  await page.setViewport({ width: options.width, height: options.height });
-  await page.waitForTimeout(options.delay * 1000);
 
   if (options.disableAnimations) {
     await page.addStyleTag({
@@ -41,6 +40,7 @@ export default async function takeScreenshot(url: string, options: optionsType) 
   let base64;
   try {
     await page.goto(url, { waitUntil: "load" });
+    await page.waitForTimeout(options.delay * 1000);
     base64 = await page.screenshot({ type: options.type, fullPage: options.fullPage, encoding: "base64" });
   } catch (error) {
     console.error(error);
