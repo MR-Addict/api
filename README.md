@@ -1,6 +1,6 @@
 # Chrome AWS Lambda API
 
-## 1. Take Screenshot API
+## 1. Screenshot API
 
 Method:
 
@@ -25,5 +25,5 @@ Body:
 Example:
 
 ```bash
-curl https://chromeawslambdaapi.vercel.app/api/takescreenshot -X POST -d 'url=http://google.com'
+curl https://chromeawslambdaapi.vercel.app/api/screenshot -X POST -d 'url=http://google.com'
 ```

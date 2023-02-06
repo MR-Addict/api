@@ -1,6 +1,6 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
 
-import { takeScreenshot, validateForm, getOptions } from "../lib/takeScreenshot";
+import { takeScreenshot, validateForm, getOptions } from "../lib/screenshot";
 
 module.exports = async (req: VercelRequest, res: VercelResponse) => {
   const start = Date.now();
