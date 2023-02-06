@@ -20,7 +20,7 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
 
     return res.json({
       status: true,
-      data: { base64, url: req.body.url, type: req.body.type, runtime: (end - start) / 1000 },
+      data: { url: req.body.url, type: req.body.type, runtime: (end - start) / 1000, base64 },
     });
   } catch (error) {
     console.error(error);

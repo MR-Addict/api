@@ -37,15 +37,15 @@ export default async function takeScreenshot(url: string, options: optionsType) 
     });
   }
 
-  let base64;
   try {
     await page.goto(url, { waitUntil: "load" });
     await page.waitForTimeout(options.delay * 1000);
-    base64 = await page.screenshot({ type: options.type, fullPage: options.fullPage, encoding: "base64" });
+    const base64 = await page.screenshot({ type: options.type, fullPage: options.fullPage, encoding: "base64" });
+    if (browser !== null) await browser.close();
+    return `data:image/${options.type};base64,${base64}`;
   } catch (error) {
     console.error(error);
-  } finally {
     if (browser !== null) await browser.close();
+    return;
   }
-  return base64;
 }
