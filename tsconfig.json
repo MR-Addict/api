@@ -11,8 +11,7 @@
     "strictPropertyInitialization": true,
     "noImplicitThis": true,
     "alwaysStrict": true,
-    "esModuleInterop": true,
-    "baseUrl": "."
+    "esModuleInterop": true
   },
   "include": ["**/*.ts"],
   "exclude": ["node_modules", ".vercel"]

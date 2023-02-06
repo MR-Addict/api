@@ -1,17 +1,9 @@
 import puppeteer from "puppeteer-core";
 import chromium from "chrome-aws-lambda";
 
-export interface optionsType {
-  type: "png" | "jpeg";
-  width: number;
-  height: number;
-  timeout: number;
-  delay: number;
-  fullPage: boolean;
-  disableAnimations: boolean;
-}
+import { OptionsType } from "../types";
 
-export default async function takeScreenshot(url: string, options: optionsType) {
+export default async function takeScreenshot(url: string, options: OptionsType) {
   const chromePath =
     process.env.ISLOCALHOST === "TRUE"
       ? "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
@@ -38,7 +30,7 @@ export default async function takeScreenshot(url: string, options: optionsType) 
   }
 
   try {
-    await page.goto(url, { waitUntil: "load" });
+    await page.goto(url, { waitUntil: "networkidle2" });
     await page.waitForTimeout(options.delay * 1000);
     const base64 = await page.screenshot({ type: options.type, fullPage: options.fullPage, encoding: "base64" });
     if (browser !== null) await browser.close();

@@ -1,29 +1,22 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
 
-import { takeScreenshot, validateCaptureForm } from "../lib";
+import { takeScreenshot, validateForm, getOptions } from "../lib";
 
 module.exports = async (req: VercelRequest, res: VercelResponse) => {
   const start = Date.now();
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Request-Method", "*");
+
   if (req.method !== "POST") return res.setHeader("Allow", ["POST"]).end(`Method ${req.method} is not allowed!`);
-  if (!req.body || !req.body.url) return res.json({ status: false, message: "Needed request body is empty!" });
+  if (!req.body) return res.json({ status: false, message: "Request body is empty!" });
 
-  const options = validateCaptureForm(req.body);
-  if (!options) return res.json({ status: false, message: "Invalid request body!" });
+  const error = validateForm(req.body);
+  if (error) return res.json({ status: false, message: "Invalid request body!" });
 
-  try {
-    const base64 = await takeScreenshot(req.body.url, { ...options });
-    if (base64 === undefined) return res.json({ status: false, message: `Website ${req.body.url} unaccessible!` });
+  const options = getOptions(req.body);
+  const base64 = await takeScreenshot(req.body.url, options);
+  if (!base64) return res.json({ status: false, message: "Failed to capture your page!" });
 
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Request-Method", "*");
-    const end = Date.now();
-
-    return res.json({
-      status: true,
-      data: { url: req.body.url, type: req.body.type, runtime: (end - start) / 1000, base64 },
-    });
-  } catch (error) {
-    console.error(error);
-    return res.json({ status: false, message: `Website ${req.body.url} unaccessible!` });
-  }
+  const runtime = (Date.now() - start) / 1000 + "s";
+  return res.json({ status: true, data: { url: req.body.url, type: req.body.type, runtime, base64 } });
 };
