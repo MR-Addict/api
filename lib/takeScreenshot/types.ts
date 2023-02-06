@@ -1,4 +1,4 @@
-export default interface OptionsType {
+export interface OptionsType {
   type: "png" | "jpeg";
   width: number;
   height: number;

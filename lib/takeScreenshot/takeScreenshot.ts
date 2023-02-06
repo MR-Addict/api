@@ -1,7 +1,7 @@
 import puppeteer from "puppeteer-core";
 import chromium from "chrome-aws-lambda";
 
-import { OptionsType } from "../types";
+import { OptionsType } from "./types";
 
 export default async function takeScreenshot(url: string, options: OptionsType) {
   const chromePath =

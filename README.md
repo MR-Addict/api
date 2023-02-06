@@ -1,11 +1,15 @@
-# VERCEL Serveless Function
+# Chrome AWS Lambda API
 
-## How to Use
+## 1. Take Screenshot API
+
+Method:
 
 | Key          | Value                             |
 | :----------- | :-------------------------------- |
 | Method       | POST                              |
 | Content-Type | application/x-www-form-urlencoded |
+
+Body:
 
 | Body              | Value    | Requirements |
 | :---------------- | :------- | :----------- |
@@ -21,5 +25,5 @@
 Example:
 
 ```bash
-curl https://capturewebsite.vercel.app/api/capturewebsite -X POST -d 'url=http://google.com'
+curl https://chromeawslambdaapi.vercel.app/api/takescreenshot -X POST -d 'url=http://google.com'
 ```
