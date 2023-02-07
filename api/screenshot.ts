@@ -18,5 +18,5 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
   if (!base64) return res.json({ status: false, message: "Failed to capture your page!" });
 
   const runtime = (Date.now() - start) / 1000 + "s";
-  return res.json({ status: true, data: { url: req.body.url, type: req.body.type, runtime, base64 } });
+  return res.json({ status: true, data: { type: req.body.type, runtime, url: req.body.url, base64 } });
 };
