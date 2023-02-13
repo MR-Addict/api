@@ -17,5 +17,3 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/screenshot", screenshot);
 
 app.listen(3001, () => console.log("Listening on http://localhost:3001"));
-
-export default app;

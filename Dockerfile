@@ -1,6 +1,6 @@
-FROM amazon/aws-lambda-nodejs:14
+FROM node:14.21.2-slim
 WORKDIR /app
-COPY . ${LAMBDA_TASK_ROOT}
-RUN npm install -ci
+COPY . .
+RUN npm install
 RUN npm run build
-CMD ["npm", "start"]
+CMD ["npm","run","start"]
