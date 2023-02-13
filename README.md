@@ -40,5 +40,5 @@ Response:
 Example:
 
 ```bash
-curl https://chromeawslambdaapi.vercel.app/api/screenshot -X POST -d 'url=https://example.com'
+curl https://chromeawslambdaapi.mraddict.one/screenshot -X POST -d 'url=https://example.com'
 ```

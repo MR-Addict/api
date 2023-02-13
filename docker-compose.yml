@@ -1,0 +1,10 @@
+version: "3"
+services:
+  chrome-aws-lambda-api:
+    build: .
+    image: chrome-aws-lambda-api
+    container_name: chrome-aws-lambda-api
+    network_mode: "bridge"
+    restart: unless-stopped
+    ports:
+      - 3001:3001
