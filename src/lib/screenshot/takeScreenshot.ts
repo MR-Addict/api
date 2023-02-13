@@ -1,26 +1,9 @@
-import puppeteer from "puppeteer-core";
+import puppeteer from "puppeteer";
 
 import { OptionsType } from "./types";
 
 export default async function takeScreenshot(url: string, options: OptionsType) {
-  const chromePath = process.env.CHROME_PATH || "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
-
-  const browser = await puppeteer.launch({
-    headless: true,
-    ignoreHTTPSErrors: true,
-    executablePath: chromePath,
-    args: [
-      "--no-sandbox",
-      "--disable-gpu",
-      "--disable-extensions",
-      "--dns-prefetch-disable",
-      "--disable-dev-shm-usage",
-      "--ignore-certificate-errors",
-      "--allow-running-insecure-content",
-      "--enable-features=NetworkService",
-    ],
-  });
-
+  const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
   page.setDefaultTimeout(options.timeout * 1000);

@@ -1,5 +1,5 @@
 export interface OptionsType {
-  type: "png" | "jpeg";
+  type: "png" | "jpeg" | "webp";
   width: number;
   height: number;
   timeout: number;

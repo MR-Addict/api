@@ -1,7 +1,6 @@
 FROM node:14.21.2-slim
 WORKDIR /app
 COPY . .
-ENV CHROME_PATH=/usr/bin/google-chrome-stable
 RUN npm install
 RUN npm run build
 RUN apt-get update \
