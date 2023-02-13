@@ -1,9 +1,10 @@
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-core";
 
 import { OptionsType } from "./types";
 
 export default async function takeScreenshot(url: string, options: OptionsType) {
-  const browser = await puppeteer.launch();
+  const CHROME_PATH = process.env.CHROME_PATH;
+  const browser = await puppeteer.launch({ executablePath: CHROME_PATH });
   const page = await browser.newPage();
 
   page.setDefaultTimeout(options.timeout * 1000);
