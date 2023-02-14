@@ -44,12 +44,12 @@ main {
 }
 
 .card a {
-  color: white;
+  color: black;
+  background-color: white;
   padding: 0.7rem;
   font-size: 1.3rem;
   text-decoration: none;
   outline: solid 1px white;
-  background-color: black;
   border-radius: 0.3rem;
   width: 100%;
   text-align: center;
@@ -57,8 +57,8 @@ main {
 }
 
 .card a:hover {
-  color: black;
-  background-color: white;
+  color: white;
+  background-color: black;
 }
 
 footer {
@@ -79,5 +79,9 @@ footer a:hover {
   }
   .card {
     padding: 1rem;
+  }
+  .card a {
+    color: black;
+    background-color: white;
   }
 }
