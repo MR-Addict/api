@@ -16,7 +16,7 @@ Body:
 | :---------------- | :------- | :------ | :----------- |
 | url               | string   | None    | required     |
 | type              | png,jpeg | png     | optional     |
-| width             | 320~3840 | 1280    | optional     |
+| width             | 320~3840 | 1920    | optional     |
 | height            | 240~2160 | 800     | optional     |
 | delay             | 0~10     | 0       | optional     |
 | timeout           | 10~60    | 30      | optional     |

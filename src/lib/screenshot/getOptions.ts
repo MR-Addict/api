@@ -3,7 +3,7 @@ import { OptionsType } from "./types";
 export default function getOptions(form: { [key: string]: any }) {
   const options = {
     type: "png",
-    width: 1280,
+    width: 1920,
     height: 800,
     delay: 0,
     timeout: 30,
