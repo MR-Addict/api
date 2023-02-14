@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install gnupg wget -y && \
   sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' && \
   apt-get update && \
   apt-get install google-chrome-stable -y --no-install-recommends && \
+  apt-get install language-pack-zh* chinese* && \
   rm -rf /var/lib/apt/lists/*
 
 CMD ["npm","run","start"]
