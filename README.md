@@ -17,7 +17,7 @@ Body:
 | url               | string        | None    | required     |
 | type              | png,jpeg,webp | webp    | optional     |
 | width             | 320~3840      | 1920    | optional     |
-| height            | 240~2160      | 800     | optional     |
+| height            | 240~2160      | 1080    | optional     |
 | delay             | 0~10          | 0       | optional     |
 | timeout           | 10~60         | 30      | optional     |
 | fullPage          | booelan       | false   | optional     |

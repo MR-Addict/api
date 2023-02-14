@@ -4,7 +4,7 @@ export default function getOptions(form: { [key: string]: any }) {
   const options = {
     type: "webp",
     width: 1920,
-    height: 800,
+    height: 1080,
     delay: 0,
     timeout: 30,
     fullPage: false,
