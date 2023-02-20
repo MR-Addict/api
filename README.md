@@ -76,5 +76,5 @@ Response:
 Example:
 
 ```bash
-curl https://chromeawslambdaapi.mraddict.one/quote?date=2022-02-20
+curl https://chromeawslambdaapi.mraddict.one/quote?date=2023-02-20
 ```
