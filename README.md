@@ -65,8 +65,8 @@ Response:
   "status": true,
   "data": {
     "date": "2023-02-20",
-    "en": "你每生气一分钟，也就失去了六十秒的幸福。",
-    "zh": "For every minute you are angry, you lose sixty seconds of happiness.",
+    "zh": "你每生气一分钟，也就失去了六十秒的幸福。",
+    "en": "For every minute you are angry, you lose sixty seconds of happiness.",
     "img": "https://staticedu-wps.cache.iciba.com/image/d486eb38c2ccb2a54de3d155a66eb31f.jpg",
     "preview": "https://staticedu-wps.cache.iciba.com/image/d411ef78a741e412b9c8fe238b7faa5c.jpg"
   }

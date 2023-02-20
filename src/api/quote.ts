@@ -14,8 +14,8 @@ async function fetchQuote(date?: string) {
       status: true,
       data: {
         date: result.dateline,
-        en: result.note,
-        zh: result.content,
+        en: result.content,
+        zh: result.note,
         img: result.picture2,
         preview: result.picture,
       },
