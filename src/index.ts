@@ -6,6 +6,7 @@ import cors from "cors";
 import express from "express";
 import bodyParser from "body-parser";
 
+import quotes from "@/api/quotes";
 import screenshot from "@/api/screenshot";
 
 const app = express();
@@ -15,6 +16,7 @@ app.use(cors({ origin: true }));
 app.use(express.static(path.join(process.cwd(), "public")));
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use("/quotes", quotes);
 app.use("/screenshot", screenshot);
 
 app.listen(3001, () => console.log("Listening on http://localhost:3001"));
