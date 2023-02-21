@@ -21,20 +21,20 @@ async function fetchQuote(date?: string) {
       },
     };
   } catch (error) {
-    console.error(error);
+    return { status: false };
   }
 }
 
 router.get("/", async (req: Request, res: Response) => {
   const rawDate = String(req.query.date || new Date().toString());
   if (isNaN(Date.parse(rawDate)) || new Date(rawDate) > new Date()) {
-    return res.json({ status: false, message: "Invalid date!" });
+    return res.status(400).json({ status: false, message: "Invalid date!" });
   }
 
   const date = formatDate(rawDate).split(" ")[0];
 
   const result = await fetchQuote(date);
-  return res.json(result);
+  return res.status(result.status ? 200 : 500).json(result);
 });
 
 export default router;
