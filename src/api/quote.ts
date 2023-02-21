@@ -26,13 +26,10 @@ async function fetchQuote(date?: string) {
 }
 
 router.get("/", async (req: Request, res: Response) => {
-  const rawDate = String(req.query.date || new Date().toString());
-  if (isNaN(Date.parse(rawDate)) || new Date(rawDate) > new Date()) {
-    return res.status(400).json({ status: false, message: "Invalid date!" });
-  }
+  let rawDate = String(req.query.date);
+  if (isNaN(Date.parse(rawDate)) || new Date(rawDate) > new Date()) rawDate = new Date().toString();
 
   const date = formatDate(rawDate).split(" ")[0];
-
   const result = await fetchQuote(date);
   return res.status(result.status ? 200 : 500).json(result);
 });
