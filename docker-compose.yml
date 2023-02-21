@@ -6,5 +6,7 @@ services:
     container_name: chrome-aws-lambda-api
     network_mode: "bridge"
     restart: unless-stopped
+    environment:
+      - TZ=Asia/Shanghai
     ports:
       - 3001:3001
