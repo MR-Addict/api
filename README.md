@@ -1,4 +1,4 @@
-# Chrome AWS Lambda API
+# My API Center
 
 ## 1. Screenshot API
 
@@ -40,10 +40,10 @@ Response:
 Example:
 
 ```bash
-curl https://chromeawslambdaapi.mraddict.one/screenshot -X POST -d 'url=https://example.com'
+curl https://api.mraddict.one/screenshot -X POST -d 'url=https://example.com'
 ```
 
-## 2. Daily quotes
+## 2. Daily quotes API
 
 Method:
 
@@ -56,7 +56,7 @@ Search params:
 
 | Search params | Value  | Default | Requirements |
 | :------------ | :----- | :------ | :----------- |
-| date          | string | None    | optional     |
+| date          | string | Today   | optional     |
 
 Response:
 
@@ -76,5 +76,5 @@ Response:
 Example:
 
 ```bash
-curl https://chromeawslambdaapi.mraddict.one/quote?date=2023-02-20
+curl https://api.mraddict.one/quote?date=2023-02-20
 ```
