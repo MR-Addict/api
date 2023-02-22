@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* body */
+body {
+  @apply min-h-[100dvh] px-5 py-5 md:px-48 flex flex-col items-center justify-center gap-5;
+}

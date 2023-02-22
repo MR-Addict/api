@@ -6,10 +6,20 @@
   "_moduleAliases": {
     "@": "dist"
   },
+  "watch": {
+    "build:css": {
+      "patterns": [
+        "src/www"
+      ],
+      "extensions": "pug,css",
+      "quiet": true
+    }
+  },
   "scripts": {
-    "build": "tsc",
+    "build": "npm run build:css && tsc",
     "start": "node --no-warnings dist/index.js",
-    "dev": "concurrently \"tsc --watch\" \"nodemon --no-warnings -q dist/index.js\""
+    "build:css": "postcss src/www/style.css -o public/style.css",
+    "dev": "npm run build:css && concurrently \"tsc --watch\" \"nodemon --no-warnings -q dist/index.js\" \"npm-watch\""
   },
   "author": "MR-Addict",
   "license": "MIT",
