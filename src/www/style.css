@@ -4,7 +4,7 @@
 
 /* body */
 body {
-  background-image: linear-gradient(to right, #38ef7d, #129a8e);
+  background-image: linear-gradient(to bottom, #38ef7d, #129a8e);
   @apply min-h-[100dvh] px-5 py-5 flex flex-col items-center justify-between gap-5;
 }
 

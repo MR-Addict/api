@@ -4,7 +4,7 @@ const router = express.Router();
 const apis = [
   {
     name: "Screenshot API",
-    intro: "Take any website screenshot from url! Take screenshot easier!",
+    intro: "Take any website screenshot from url! Make screenshot easier!",
     url: "https://mraddict.one/tools/capture-website",
   },
   {
