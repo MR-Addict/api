@@ -1,3 +1,7 @@
-main(class="w-full flex flex-col gap-1")
-  h1(class="text-xl font-bold text-center text-gray-700") Scheduled Tasks
-  
+nav
+main
+  each api in apis
+    div(class="card")
+      h1= api.name
+      p= api.intro
+      a(href= api.url) Learn More
