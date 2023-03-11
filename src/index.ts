@@ -1,4 +1,4 @@
-import "./loadenv";
+import "./load";
 import "module-alias/register";
 
 import path from "path";
