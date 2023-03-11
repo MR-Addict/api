@@ -10,7 +10,7 @@ const apis = [
   {
     name: "Daily quote API",
     intro: "Find beautiful quotes and improve english daily!",
-    url: "https://github.com/MR-Addict/api",
+    url: "https://quotes.mraddict.vercel.app",
   },
 ];
 
