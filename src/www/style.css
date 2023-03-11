@@ -4,7 +4,6 @@
 
 /* body */
 body {
-  background-image: linear-gradient(to bottom, #38ef7d, #129a8e);
   @apply min-h-[100dvh] px-5 py-5 flex flex-col items-center justify-between gap-5;
 }
 
@@ -15,8 +14,7 @@ main {
 
 /* card */
 .card {
-  box-shadow: 0 0 25px gray;
-  @apply h-full text-center p-5 flex flex-col justify-between gap-2 bg-white rounded-md;
+  @apply h-full text-center outline outline-1 outline-black shadow-md p-5 flex flex-col justify-between gap-2 bg-white rounded-md;
 }
 
 .card h1 {
