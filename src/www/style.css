@@ -9,24 +9,28 @@ body {
 
 /* main */
 main {
-  @apply w-full max-w-xl grid grid-cols-1 md:grid-cols-2 gap-5 items-center justify-center;
+  @apply w-full max-w-2xl grid grid-cols-1 md:grid-cols-2 gap-5 items-center justify-center;
 }
 
 /* card */
 .card {
-  @apply h-full text-center outline outline-1 outline-black shadow-md p-5 flex flex-col justify-between gap-2 bg-white rounded-md;
+  @apply h-full text-center outline outline-1 outline-black p-5 flex flex-col justify-between gap-2 bg-white rounded-md;
 }
 
 .card h1 {
-  @apply text-2xl font-semibold text-green-600;
+  @apply text-2xl font-bold text-slate-700;
+}
+
+.card div {
+  @apply flex flex-row gap-3 w-full justify-between mt-2;
 }
 
 .card a {
-  @apply bg-green-500 duration-300 text-white p-2 rounded-md mt-2;
+  @apply text-lg font-semibold outline outline-1 outline-green-600 duration-300 text-green-600 py-2 rounded-md w-full;
 }
 
 .card a:hover {
-  @apply bg-green-600;
+  @apply bg-green-600 text-white;
 }
 
 /* footer */
