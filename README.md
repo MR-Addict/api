@@ -1,10 +1,18 @@
 # My API Center
 
+Table of contents:
+
+- [My API Center](#my-api-center)
+  - [1. Screenshot API](#1-screenshot-api)
+  - [2. Daily quotes API](#2-daily-quotes-api)
+    - [`/quote`](#quote)
+  - [3. Qndxx screenshot API](#3-qndxx-screenshot-api)
+    - [`/qndxx/current`](#qndxxcurrent)
+    - [`/qndxx/list`](#qndxxlist)
+
 ## 1. Screenshot API
 
-### `/screenshot`
-
-Take any website screenshot from url
+**`/screenshot`** Take any website screenshot from url
 
 Method:
 
@@ -89,7 +97,7 @@ curl https://api.mraddict.one/quote?date=2023-02-20
 
 ## 3. Qndxx screenshot API
 
-## `/qndxx/current`
+### `/qndxx/current`
 
 Get **current** Qndxx data.
 
