@@ -2,14 +2,18 @@
 
 - [API Center](#api-center)
   - [1. Screenshot API](#1-screenshot-api)
+    - [`/screenshot`](#screenshot)
   - [2. Daily quotes API](#2-daily-quotes-api)
+    - [`/quote`](#quote)
   - [3. Qndxx screenshot API](#3-qndxx-screenshot-api)
     - [`/qndxx/current`](#qndxxcurrent)
     - [`/qndxx/list`](#qndxxlist)
 
 ## 1. Screenshot API
 
-**`/screenshot`** Take any website screenshot from url
+### `/screenshot`
+
+Take any website screenshot from url
 
 Method:
 
@@ -53,6 +57,8 @@ curl https://api.mraddict.one/screenshot -X POST -d 'url=https://example.com'
 ```
 
 ## 2. Daily quotes API
+
+### `/quote`
 
 Get daily quotes
 
