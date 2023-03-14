@@ -8,7 +8,7 @@ function mapCourse(course: DxxCourseType) {
     endTime: course.endTime,
     uri: course.uri,
     cover: course.cover,
-    endImguri: course.uri.replace(/\/\w+\.html$/, "/images/end.jpg"),
+    endImgUri: course.uri.replace(/\/\w+\.html$/, "/images/end.jpg"),
   };
 }
 
@@ -39,7 +39,7 @@ async function fetchOnePage(page: number) {
     return mapCourse(item);
   }) as DxxCourseType[];
 
-  return { pagedInfo, courses };
+  return { pagedInfo, courses: courses.reverse() };
 }
 
 async function list() {
@@ -51,10 +51,10 @@ async function list() {
 
     const courses: DxxCourseType[] = [];
     const onePage = await fetchOnePage(totalPages);
-    onePage.courses.reverse().forEach((item) => courses.push(item));
+    onePage.courses.forEach((item) => courses.push(item));
     if (onePage.courses.length !== 10) {
       const anotherPage = await fetchOnePage(totalPages - 1);
-      anotherPage.courses.reverse().forEach((item) => courses.push(item));
+      anotherPage.courses.forEach((item) => courses.push(item));
     }
 
     return { status: true, data: courses.slice(0, 10) };

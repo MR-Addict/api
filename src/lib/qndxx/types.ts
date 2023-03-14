@@ -5,7 +5,7 @@ export interface DxxCourseType {
   title: string;
   cover: string;
   uri: string;
-  endImguri: string;
+  endImgUri: string;
 }
 
 export interface PageInfoType {
