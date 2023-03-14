@@ -7,8 +7,7 @@ import express from "express";
 import bodyParser from "body-parser";
 
 import views from "@/www/views";
-import quote from "@/api/quote";
-import screenshot from "@/api/screenshot";
+import { quote, qndxx, screenshot } from "@/api";
 
 const port = 3001;
 const app = express();
@@ -24,6 +23,7 @@ app.set("views", path.join(process.cwd(), "src/www/views"));
 
 app.use("/", views);
 app.use("/quote", quote);
+app.use("/qndxx", qndxx);
 app.use("/screenshot", screenshot);
 
 app.listen(port, () => console.log(`Listening on http://localhost:${port}`));

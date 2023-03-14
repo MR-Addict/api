@@ -4,21 +4,24 @@
 
 /* body */
 body {
-  @apply min-h-[100dvh] px-5 py-5 flex flex-col items-center justify-between gap-5;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-image: linear-gradient(to right bottom #fff4f4, #f5ffff);
+  @apply px-5 py-5 md:px-48 flex flex-col items-center justify-between gap-5;
 }
 
 /* main */
 main {
-  @apply w-full max-w-2xl grid grid-cols-1 md:grid-cols-2 gap-5 items-center justify-center;
+  @apply w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10 items-center justify-center;
 }
 
 /* card */
 .card {
-  @apply h-full text-center outline outline-1 outline-black p-5 flex flex-col justify-between gap-2 bg-white rounded-md;
+  @apply h-full text-center outline outline-1 outline-black shadow-lg p-5 flex flex-col justify-between gap-2 bg-white rounded-md;
 }
 
 .card h1 {
-  @apply text-2xl font-bold text-slate-700;
+  @apply text-2xl font-bold text-green-600;
 }
 
 .card div {
@@ -26,11 +29,15 @@ main {
 }
 
 .card a {
-  @apply text-lg font-semibold outline outline-1 outline-green-600 duration-300 text-green-600 py-2 rounded-md w-full;
+  @apply text-lg font-semibold outline outline-1 outline-gray-500 duration-300 text-green-600 py-2 rounded-md w-full;
+}
+
+.card a {
+  @apply bg-green-600 text-white;
 }
 
 .card a:hover {
-  @apply bg-green-600 text-white;
+  @apply shadow-lg bg-white text-green-600;
 }
 
 /* footer */

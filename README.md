@@ -2,6 +2,10 @@
 
 ## 1. Screenshot API
 
+### `/screenshot`
+
+Take any website screenshot from url
+
 Method:
 
 | Key          | Value                             |
@@ -45,6 +49,10 @@ curl https://api.mraddict.one/screenshot -X POST -d 'url=https://example.com'
 
 ## 2. Daily quotes API
 
+### `/quote`
+
+Get daily quotes
+
 Method:
 
 | Key      | Value            |
@@ -77,4 +85,77 @@ Example:
 
 ```bash
 curl https://api.mraddict.one/quote?date=2023-02-20
+```
+
+## 3. Qndxx screenshot API
+
+## `/qndxx/current`
+
+Get **current** Qndxx data.
+
+Method:
+
+| Key      | Value            |
+| :------- | :--------------- |
+| Method   | GET              |
+| Response | application/json |
+
+Response:
+
+```json
+{
+  "status": true,
+  "data": {
+    "id": "C0126",
+    "title": "2023年第3期",
+    "startTime": "2023-03-13 09:56:40",
+    "endTime": "2023-03-19 22:00:00",
+    "uri": "https://h5.cyol.com/special/daxuexi/fe3ao1cm3k/index.html",
+    "cover": "https://st-file.yunbanos.cn/uploadsoss/qczj-youth-learning/2023-03-13/bf51cb5ead3fcc30ee9557a86250398b.png",
+    "endImg": "https://h5.cyol.com/special/daxuexi/fe3ao1cm3k/images/end.jpg"
+  }
+}
+```
+
+Example:
+
+```bash
+curl https://api.mraddict.one/qndxx/current
+```
+
+### `/qndxx/list`
+
+Get the latest **10** of Qndxx data.
+
+Method:
+
+| Key      | Value            |
+| :------- | :--------------- |
+| Method   | GET              |
+| Response | application/json |
+
+Response:
+
+```json
+{
+  "status": true,
+  "data": [
+    {
+    "id": "C0126",
+    "title": "2023年第3期",
+    "startTime": "2023-03-13 09:56:40",
+    "endTime": "2023-03-19 22:00:00",
+    "uri": "https://h5.cyol.com/special/daxuexi/fe3ao1cm3k/index.html",
+    "cover": "https://st-file.yunbanos.cn/uploadsoss/qczj-youth-learning/2023-03-13/bf51cb5ead3fcc30ee9557a86250398b.png",
+    "endImg": "https://h5.cyol.com/special/daxuexi/fe3ao1cm3k/images/end.jpg"
+  },
+  ...
+  ]
+}
+```
+
+Example:
+
+```bash
+curl https://api.mraddict.one/qndxx/list
 ```
