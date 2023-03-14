@@ -8,7 +8,7 @@ function mapCourse(course: DxxCourseType) {
     endTime: course.endTime,
     uri: course.uri,
     cover: course.cover,
-    endImg: course.uri.replace(/\/\w+\.html$/, "/images/end.jpg"),
+    endImguri: course.uri.replace(/\/\w+\.html$/, "/images/end.jpg"),
   };
 }
 
