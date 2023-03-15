@@ -1,9 +1,12 @@
 nav
+  h1 API Center
 main
-  each api in apis
-    div(class="card")
-      h1= api.name
-      p= api.intro
-      div
-        a(href= api.url) Have a try
-        a(href= "https://github.com/MR-Addict/api") Learn more
+  h1 All APIs(#{apis.length})
+  div(class="card-container")
+    each api in apis
+      div(class="card")
+        h1= api.name
+        p= api.intro
+        div
+          a(href= api.demo) Have a try
+          a(href= api.doc) Learn more

@@ -2,26 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+.background {
+  @apply bg-gradient-to-br from-blue-50 to-purple-50;
+}
+
 /* body */
 body {
-  min-height: 100vh;
-  min-height: 100dvh;
-  background-image: linear-gradient(to right bottom #fff4f4, #f5ffff);
-  @apply px-5 py-5 md:px-48 flex flex-col items-center justify-between gap-5;
+  @apply background min-h-screen px-5 py-5 md:px-48 flex flex-col items-center justify-between gap-5;
+}
+
+/* nav */
+nav h1 {
+  @apply text-3xl font-bold text-gray-700;
 }
 
 /* main */
 main {
-  @apply w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10 items-center justify-center;
+  @apply w-full flex flex-col items-start justify-center gap-2;
+}
+
+main h1 {
+  @apply text-2xl font-bold text-gray-700;
+}
+
+.card-container {
+  @apply grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10;
 }
 
 /* card */
 .card {
-  @apply h-full text-center outline outline-1 outline-black shadow-lg p-5 flex flex-col justify-between gap-2 bg-white rounded-md;
+  @apply background h-full text-center outline outline-1 outline-gray-400 shadow-lg p-5 flex flex-col justify-between gap-3 bg-white rounded-md;
 }
 
 .card h1 {
-  @apply text-2xl font-bold text-green-600;
+  @apply text-3xl font-bold text-green-600;
+}
+
+.card p {
+  @apply text-lg;
 }
 
 .card div {
@@ -29,15 +47,11 @@ main {
 }
 
 .card a {
-  @apply text-lg font-semibold outline outline-1 outline-gray-500 duration-300 text-green-600 py-2 rounded-md w-full;
-}
-
-.card a {
-  @apply bg-green-600 text-white;
+  @apply bg-white text-green-600 text-lg font-semibold outline outline-1 outline-gray-400 duration-300 py-2 rounded-md w-full;
 }
 
 .card a:hover {
-  @apply shadow-lg bg-white text-green-600;
+  @apply shadow-lg bg-green-600 text-white;
 }
 
 /* footer */

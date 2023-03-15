@@ -121,7 +121,7 @@ Response:
     "endTime": "2023-03-19 22:00:00",
     "uri": "https://h5.cyol.com/special/daxuexi/fe3ao1cm3k/index.html",
     "cover": "https://st-file.yunbanos.cn/uploadsoss/qczj-youth-learning/2023-03-13/bf51cb5ead3fcc30ee9557a86250398b.png",
-    "endImgUri": "https://h5.cyol.com/special/daxuexi/fe3ao1cm3k/images/end.jpg"
+    "screenshot": "https://h5.cyol.com/special/daxuexi/fe3ao1cm3k/images/end.jpg"
   }
 }
 ```
@@ -156,7 +156,7 @@ Response:
     "endTime": "2023-03-19 22:00:00",
     "uri": "https://h5.cyol.com/special/daxuexi/fe3ao1cm3k/index.html",
     "cover": "https://st-file.yunbanos.cn/uploadsoss/qczj-youth-learning/2023-03-13/bf51cb5ead3fcc30ee9557a86250398b.png",
-    "endImgUri": "https://h5.cyol.com/special/daxuexi/fe3ao1cm3k/images/end.jpg"
+    "screenshot": "https://h5.cyol.com/special/daxuexi/fe3ao1cm3k/images/end.jpg"
   },
   ...
   ]

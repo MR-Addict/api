@@ -2,16 +2,19 @@ export const apis = [
   {
     name: "Screenshot API",
     intro: "Take any website screenshot from url! Make screenshot easier!",
-    url: "https://mraddict.one/tools/capture-website",
+    demo: "https://mraddict.one/tools/capture-website",
+    doc: "https://github.com/MR-Addict/api#1-screenshot-api",
   },
   {
     name: "Daily quote API",
     intro: "Find beautiful daily quotes and improve english!",
-    url: "https://quotes.mraddict.vercel.app",
+    demo: "https://quotes.mraddict.vercel.app",
+    doc: "https://github.com/MR-Addict/api#2-daily-quotes-api",
   },
   {
-    name: "QNDXX screenshot API",
-    intro: "Easily Get this week's QNDXX screenshot!",
-    url: "https://mr-addict.github.io/qndxx-screenshort-generator",
+    name: "Qndxx screenshot API",
+    intro: "Easily Get this week's qndxx screenshot!",
+    demo: "https://mr-addict.github.io/qndxx-screenshort-generator",
+    doc: "https://github.com/MR-Addict/api#3-qndxx-screenshot-api",
   },
 ];

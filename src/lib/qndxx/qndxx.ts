@@ -1,6 +1,8 @@
 import { DxxCourseType, PageInfoType } from "./types";
 
 function mapCourse(course: DxxCourseType) {
+  const uri = new URL(course.uri);
+
   return {
     id: course.id,
     title: course.title,
@@ -8,7 +10,7 @@ function mapCourse(course: DxxCourseType) {
     endTime: course.endTime,
     uri: course.uri,
     cover: course.cover,
-    endImgUri: course.uri.replace(/\/\w+\.html$/, "/images/end.jpg"),
+    screenshot: uri.origin + uri.pathname.split("/").slice(0, -1).join("/") + "/images/end.jpg",
   };
 }
 
