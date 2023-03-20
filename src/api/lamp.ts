@@ -6,12 +6,15 @@ const router = express.Router();
 import { lamp } from "@/lib/lamp";
 
 router.post("/", async (req: Request, res: Response) => {
-  const cmd = req.body.cmd;
   const token = req.body.token;
+  const status = req.body.status;
+  const mode = req.body.mode;
   if (token !== mqttPassword) return res.status(401).send("Not authorized");
-  if (cmd !== "on" && cmd !== "off") return res.status(400).send("Bad request");
+  if (status !== "on" && status !== "off") return res.status(400).send("Bad request");
+  if (status === "on" && mode !== "Bright" && mode !== "Night" && mode !== "Warm")
+    return res.status(400).send("Bad request");
 
-  lamp(cmd === "on");
+  lamp(status, mode);
   return res.end();
 });
 

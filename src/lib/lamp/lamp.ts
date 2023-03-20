@@ -22,8 +22,8 @@ client.on("error", (error) => {
   console.error(error);
 });
 
-function lamp(cmd: boolean) {
-  client.publish(publishTopic, JSON.stringify({ status: cmd ? "on" : "off" }));
+function lamp(status: "on" | "off", mode: "Bright" | "Night" | "Warm") {
+  client.publish(publishTopic, JSON.stringify({ status, mode }));
 }
 
 export default lamp;
