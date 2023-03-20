@@ -1,10 +1,11 @@
 import puppeteer from "puppeteer-core";
 
 import { OptionsType } from "./types";
+import { chromeExecPath } from "@/loadenv";
 
 export default async function takeScreenshot(url: string, options: OptionsType) {
-  const CHROME_PATH = process.env.CHROME_PATH;
-  const browser = await puppeteer.launch({ executablePath: CHROME_PATH, args: ["--no-sandbox"] });
+  const browser = await puppeteer.launch({ executablePath: chromeExecPath, args: ["--no-sandbox"] });
+
   const page = await browser.newPage();
 
   page.setDefaultTimeout(options.timeout * 1000);

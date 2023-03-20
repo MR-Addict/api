@@ -7,11 +7,11 @@ import express from "express";
 import bodyParser from "body-parser";
 
 import views from "@/www/views";
-import { quote, qndxx, screenshot } from "@/api";
+import { isLocalhost } from "./loadenv";
+import { quote, qndxx, screenshot, lamp } from "@/api";
 
 const port = 3001;
 const app = express();
-const isLocalhost = process.env.ISLOCALHOST === "TRUE";
 
 app.use(express.json());
 app.use(cors({ origin: true }));
@@ -22,6 +22,7 @@ app.set("view engine", "pug");
 app.set("views", path.join(process.cwd(), "src/www/views"));
 
 app.use("/", views);
+app.use("/lamp", lamp);
 app.use("/quote", quote);
 app.use("/qndxx", qndxx);
 app.use("/screenshot", screenshot);
