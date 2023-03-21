@@ -9,6 +9,7 @@
     - [`/qndxx/current`](#qndxxcurrent)
     - [`/qndxx/list`](#qndxxlist)
   - [4. Lamp API](#4-lamp-api)
+    - [`/lamp`](#lamp)
 
 ## 1. Screenshot API
 
@@ -171,6 +172,8 @@ curl https://api.mraddict.one/qndxx/list
 ```
 
 ## 4. Lamp API
+
+### `/lamp`
 
 Control my room desktop lamp:
 
