@@ -8,6 +8,7 @@
   - [3. Qndxx screenshot API](#3-qndxx-screenshot-api)
     - [`/qndxx/current`](#qndxxcurrent)
     - [`/qndxx/list`](#qndxxlist)
+  - [4. Lamp API](#4-lamp-api)
 
 ## 1. Screenshot API
 
@@ -167,4 +168,37 @@ Example:
 
 ```bash
 curl https://api.mraddict.one/qndxx/list
+```
+
+## 4. Lamp API
+
+Control my room desktop lamp:
+
+Method:
+
+| Key          | Value                             |
+| :----------- | :-------------------------------- |
+| Method       | POST                              |
+| Content-Type | application/x-www-form-urlencoded |
+| Response     | No response                       |
+
+Body:
+
+| Body   | Value             | Default | Requirements |
+| :----- | :---------------- | :------ | :----------- |
+| token  | string            | None    | required     |
+| status | on,off            | None    | required     |
+| mode   | Bright,Night,Warm | Bright  | optional     |
+
+Response:
+
+No response.
+
+Example:
+
+```bash
+# turn lamp on
+curl -X POST https://api.mraddict.one/lamp -d "token=authorizedToken&status=on&mode=Bright"
+# turn lamp off
+curl -X POST https://api.mraddict.one/lamp -d "token=authorizedToken&status=off"
 ```
