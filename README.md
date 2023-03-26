@@ -10,6 +10,8 @@
     - [`/qndxx/list`](#qndxxlist)
   - [4. Lamp API](#4-lamp-api)
     - [`/lamp`](#lamp)
+  - [5. OpenAI](#5-openai)
+    - [`/openai/chat`](#openaichat)
 
 ## 1. Screenshot API
 
@@ -204,4 +206,89 @@ Example:
 curl -X POST https://api.mraddict.one/lamp -d "token=authorizedToken&status=on&mode=Bright"
 # turn lamp off
 curl -X POST https://api.mraddict.one/lamp -d "token=authorizedToken&status=off"
+```
+
+## 5. OpenAI
+
+### `/openai/chat`
+
+Communication with openAI:
+
+Method:
+
+| Key          | Value            |
+| :----------- | :--------------- |
+| Method       | POST             |
+| Content-Type | application/json |
+| Response     | application/json |
+
+Header:
+
+| Key           | Value        |
+| :------------ | :----------- |
+| authorization | openAIApiKey |
+
+Body:
+
+| Body              | Value   | Default | Requirements |
+| :---------------- | :------ | :------ | :----------- |
+| model             | string  | None    | required     |
+| messages          | array   | None    | required     |
+| temperature       | number  | None    | optional     |
+| top_p             | number  | None    | optional     |
+| n                 | number  | None    | optional     |
+| stream            | boolean | None    | optional     |
+| max_tokens        | number  | None    | optional     |
+| presence_penalty  | number  | None    | optional     |
+| frequency_penalty | number  | None    | optional     |
+
+Response:
+
+```json
+{
+  "status": true,
+  "data": {
+    "id": "chatcmpl-123",
+    "object": "chat.completion",
+    "created": 1677652288,
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "\n\nHello there, how may I assist you today?"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 9,
+      "completion_tokens": 12,
+      "total_tokens": 21
+    }
+  }
+}
+```
+
+Example:
+
+```js
+fetch("https://api.mraddict.one/openai/chat", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: "openAIApiKey",
+  },
+  body: JSON.stringify({
+    model: "gpt-3.5-turbo",
+    messages: [
+      {
+        role: "user",
+        content: "Tell me a joke",
+      },
+    ],
+  }),
+})
+  .then((res) => res.json())
+  .then((res) => console.log(res));
 ```

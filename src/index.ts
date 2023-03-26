@@ -8,7 +8,7 @@ import bodyParser from "body-parser";
 
 import views from "@/www/views";
 import { isLocalhost } from "./loadenv";
-import { quote, qndxx, screenshot, lamp } from "@/api";
+import { quote, qndxx, screenshot, lamp, openai } from "@/api";
 
 const port = 3001;
 const app = express();
@@ -25,6 +25,7 @@ app.use("/", views);
 app.use("/lamp", lamp);
 app.use("/quote", quote);
 app.use("/qndxx", qndxx);
+app.use("/openai", openai);
 app.use("/screenshot", screenshot);
 
 app.listen(port, () => console.log(`Listening on http://localhost:${port}`));
