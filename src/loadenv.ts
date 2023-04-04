@@ -1,18 +1,19 @@
+import z from "zod";
 import { config } from "dotenv";
 
 config();
 
-const mqttBroker = process.env.MQTT_BROKER?.toString();
-const mqttUsername = process.env.MQTT_USERNAME?.toString();
-const mqttPassword = process.env.MQTT_PASSWORD?.toString();
-const isLocalhost = process.env.ISLOCALHOST === "TRUE";
-const chromeExecPath = process.env.CHROME_PATH?.toString();
-const openAIApiKey = process.env.OPENAI_TOKEN?.toString();
+const Env = z.object({
+  MQTT_BROKER: z.string(),
+  MQTT_USERNAME: z.string(),
+  MQTT_PASSWORD: z.string(),
+  ISLOCALHOST: z.enum(["TRUE", "FALSE"]),
+  CHROME_PATH: z.string(),
+});
 
-if (!mqttBroker) throw new Error("Please add MQTT_BROKER to env");
-if (!mqttUsername) throw new Error("Please add MQTT_USERNAME to env");
-if (!mqttPassword) throw new Error("Please add MQTT_PASSWORD to env");
-if (!chromeExecPath) throw new Error("Please add CHROME_PATH to env");
-if (!openAIApiKey) throw new Error("Please add OPENAI_TOKEN to env");
+type EnvType = z.TypeOf<typeof Env>;
 
-export { isLocalhost, chromeExecPath, mqttBroker, mqttUsername, mqttPassword, openAIApiKey };
+const env = Env.parse(process.env);
+
+export { env };
+export type { EnvType };

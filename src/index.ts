@@ -7,7 +7,7 @@ import express from "express";
 import bodyParser from "body-parser";
 
 import views from "@/www/views";
-import { isLocalhost } from "./loadenv";
+import { env } from "@/loadenv";
 import { quote, qndxx, screenshot, lamp, openai } from "@/api";
 
 const port = 3001;
@@ -16,7 +16,9 @@ const app = express();
 app.use(express.json());
 app.use(cors({ origin: true }));
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(process.cwd(), "public"), { maxAge: isLocalhost ? 0 : 1000 * 60 * 60 * 4 }));
+app.use(
+  express.static(path.join(process.cwd(), "public"), { maxAge: env.ISLOCALHOST === "TRUE" ? 0 : 1000 * 60 * 60 * 4 })
+);
 
 app.set("view engine", "pug");
 app.set("views", path.join(process.cwd(), "src/www/views"));

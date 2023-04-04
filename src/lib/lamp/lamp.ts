@@ -1,11 +1,11 @@
 import { connect } from "mqtt";
 
-import { mqttBroker, mqttPassword, mqttUsername } from "@/loadenv";
+import { env } from "@/loadenv";
 
 const statucTopic = "home/device/desktop_lamp/status";
 const publishTopic = "home/device/desktop_lamp/control";
 
-const client = connect(String(mqttBroker), { username: mqttUsername, password: mqttPassword });
+const client = connect(String(env.MQTT_BROKER), { username: env.MQTT_USERNAME, password: env.MQTT_PASSWORD });
 
 client.on("connect", () => {
   console.log("MQTT client connected");

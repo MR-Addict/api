@@ -1,10 +1,10 @@
 import puppeteer from "puppeteer-core";
 
+import { env } from "@/loadenv";
 import { OptionsType } from "./types";
-import { chromeExecPath } from "@/loadenv";
 
 export default async function takeScreenshot(url: string, options: OptionsType) {
-  const browser = await puppeteer.launch({ executablePath: chromeExecPath, args: ["--no-sandbox"] });
+  const browser = await puppeteer.launch({ executablePath: env.CHROME_PATH, args: ["--no-sandbox"] });
 
   const page = await browser.newPage();
 
