@@ -7,7 +7,7 @@ const Env = z.object({
   MQTT_BROKER: z.string(),
   MQTT_USERNAME: z.string(),
   MQTT_PASSWORD: z.string(),
-  ISLOCALHOST: z.enum(["TRUE", "FALSE"]),
+  ISLOCALHOST: z.enum(["TRUE", "FALSE"]).optional(),
   CHROME_PATH: z.string(),
 });
 
